@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [BrowserModule,
     RouterModule.forRoot([
-      { path: 'mfe1', loadChildren: () => import('mfe1/Module').then(x => x.AppModule) }
+      { path: 'mfe1', loadChildren: () => import('mfe1/Module').then(x => x.LazyModule) }
     ])
   ],
   providers: [],

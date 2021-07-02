@@ -26,14 +26,14 @@ module.exports = {
       name: "mfe1",
       filename: "remoteEntry.js",
       exposes: {
-        './Module': './apps/mfe1/src/app/app.module.ts',
+        './Module': './apps/mfe1/src/app/lazy/lazy.module.ts',
       },
 
-      shared: share({
-        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+      shared: ({
+        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: '^12.0.0' },
+        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: '^12.0.0' },
+        "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: '^12.0.0' },
+        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: '^12.0.0' },
 
         ...sharedMappings.getDescriptors()
       })

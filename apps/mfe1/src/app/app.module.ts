@@ -8,9 +8,13 @@ import { RouterModule } from '@angular/router';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forChild([
-      { path: '', component: AppComponent }
-    ]),
+    RouterModule.forRoot([
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => import('./lazy/lazy.module').then(x => x.LazyModule)
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent],
